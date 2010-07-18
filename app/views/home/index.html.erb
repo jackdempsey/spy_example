@@ -1,0 +1,19 @@
+<h1>Example App using SignInManagement middleware</h1>
+
+<% if current_admin %>
+  <p>You're currently logged in as an admin. You should see the bar up top to switch users</p>
+<% end %>
+
+<% if current_user %>
+  <% if current_user.is_admin? %>
+    You're currently logged in as a user who returns true for is_admin? Click here to login to the admin scope:
+    <a href='/sign_in_admin'>Sign in as an admin</a>
+  <% else %>
+    You're currently not an admin with your current_user login. Login with admin@test.com/test1234 to see the change
+    <a href="/users/sign_out">Sign out first</a>
+  <% end %>
+<% else %>
+  You're not logged in at all. Go login:
+  <a href="/users/sign_in">Sign in</a>
+<% end %>
+
