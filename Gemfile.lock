@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/jackdempsey/spy.git
+  revision: 72ff0a9
+  specs:
+    spy (0.0.0)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 55fd7e3
   specs:
@@ -50,11 +56,6 @@ GIT
       rake (>= 0.8.3)
       thor (~> 0.13.7)
 
-PATH
-  remote: /Users/jack/git/skitzo
-  specs:
-    skitzo (0.0.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -93,5 +94,5 @@ DEPENDENCIES
   devise!
   rails (= 3.0.0.beta4)
   rails!
-  skitzo!
+  spy!
   sqlite3-ruby
