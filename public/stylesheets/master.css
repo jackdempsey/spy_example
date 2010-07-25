@@ -1,0 +1,19 @@
+.notice {
+  color: #093;
+  font-size: 16px;
+  background-color:#DFD;
+  border:3px solid #CEC;
+  font-size:16px;
+  margin-bottom:10px;
+  padding:5px;
+}
+
+.alert {
+  font-size: 16px;
+  background-color:#FDD;
+  border:3px solid #ECC;
+  color:red;
+  font-size:16px;
+  margin-bottom:10px;
+  padding:5px;
+}

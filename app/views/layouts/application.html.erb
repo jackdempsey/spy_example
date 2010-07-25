@@ -8,12 +8,14 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<h2>Current user: <%= current_user %></h2>
-<% if current_user %>
-  <h3>Current user is admin: <%= current_user.is_admin? %></h3>
+<% if notice %>
+  <p class="notice"><%= notice %></p>
 <% end %>
+
+<% if alert %>
+  <p class="alert"><%= alert %></p>
+<% end %>
+
 <%= yield %>
 
 </body>
