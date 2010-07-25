@@ -33,6 +33,5 @@ At this point you should be able to go to http://localhost:3000 and view the app
 * test2@test.com / test1234
 
 Give the admin and one of the test users a shot. You'll see various messages change as a result, and when you're logged in 
-as the admin, you should see the Spy middleware kick into gear. 
-
+as the admin, you should see the Spy middleware kick into gear giving you a dropdown of all the users in the system that you can switch to.
 
