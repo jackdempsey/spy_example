@@ -1,0 +1,38 @@
+h2. An example app showcasing Spy
+
+h3. Gem Requirements
+
+This app relies on the following gems:
+
+* gem 'rails', '3.0.0.beta4'
+
+* gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+* gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+
+* gem 'sqlite3-ruby', :require => 'sqlite3'
+
+* gem 'spy', :git => 'git://github.com/jackdempsey/spy.git'
+
+* bundler (1.0.0.beta.5)
+
+h3. Getting Started
+
+<code>
+
+# bundle install
+# rake db:seed
+# rails s
+
+</code>
+
+At this point you should be able to go to http://localhost:3000 and view the app. The various accounts you can test with are:
+
+* admin@test.com / test1234
+* test1@test.com / test1234
+* test2@test.com / test1234
+
+Give the admin and one of the test users a shot. You'll see various messages change as a result, and when you're logged in 
+as the admin, you should see the Spy middleware kick into gear. 
+
+
