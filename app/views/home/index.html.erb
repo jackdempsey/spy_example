@@ -1,19 +1,25 @@
-<h1>Example App using SignInManagement middleware</h1>
+<h1>Spy Example App</h1>
 
-<% if current_admin %>
-  <p>You're currently logged in as an admin. You should see the bar up top to switch users</p>
-<% end %>
+<p><strong>current_admin:</strong> <%= current_admin %></p>
+
+<p><strong>current_user:</strong> <%= current_user %></p>
+
+<% if current_user -%>
+  <p><strong>current_user.is_admin?:</strong> <%= current_user.is_admin? %></p>
+<% end -%>
+
+<% if current_admin -%>
+  You're logged into the :admin scope. You can switch your current_user to someone else above.
+<% end -%>
 
 <% if current_user %>
-  <% if current_user.is_admin? %>
-    You're currently logged in as a user who returns true for is_admin? Click here to login to the admin scope:
-    <a href='/sign_in_admin'>Sign in as an admin</a>
-  <% else %>
-    You're currently not an admin with your current_user login. Login with admin@test.com/test1234 to see the change
-    <a href="/users/sign_out">Sign out first</a>
-  <% end %>
+  <% if current_user.is_admin? && !current_admin -%>
+    You're logged in as someone who has admin privileges, but are not logged into the :admin scope currently.
+    <a href='/sign_in_admin'>Click here</a> to login to the :admin scope
+  <% else -%>
+  You're logged in as a normal unprivileged user. <a href='/users/sign_out'>Sign out</a> and then sign in as admin@test.com if you want to swich users.
+  <% end -%>
 <% else %>
-  You're not logged in at all. Go login:
-  <a href="/users/sign_in">Sign in</a>
+  You're not logged in at all. Go
+  <a href="/users/sign_in">sign in</a>
 <% end %>
-
