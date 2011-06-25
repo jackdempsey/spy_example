@@ -92,7 +92,6 @@ PLATFORMS
 
 DEPENDENCIES
   devise!
-  rails (= 3.0.0.beta4)
   rails!
   spy!
   sqlite3-ruby
