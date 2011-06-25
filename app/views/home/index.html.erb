@@ -1,25 +1,31 @@
 <h1>Spy Example App</h1>
 
+
+<h2>Admin Scope</h2>
+
 <p><strong>current_admin:</strong> <%= current_admin %></p>
 
+<% if current_admin -%>
+  <p>You're logged into the :admin scope. You can switch your current_user to someone else above.</p>
+<% end -%>
+
+<hr>
+
+<h2>User Scope</h2>
 <p><strong>current_user:</strong> <%= current_user %></p>
 
 <% if current_user -%>
   <p><strong>current_user.is_admin?:</strong> <%= current_user.is_admin? %></p>
 <% end -%>
 
-<% if current_admin -%>
-  You're logged into the :admin scope. You can switch your current_user to someone else above.
-<% end -%>
-
 <% if current_user %>
   <% if current_user.is_admin? && !current_admin -%>
-    You're logged in as someone who has admin privileges, but are not logged into the :admin scope currently.
-    <a href='/sign_in_admin'>Click here</a> to login to the :admin scope
+    <p>You're logged in as someone who has admin privileges, but are not logged into the :admin scope currently.
+    <a href='/sign_in_admin'>Click here</a> to login to the :admin scope</p>
   <% else -%>
-  You're logged in as a normal unprivileged user. <a href='/users/sign_out'>Sign out</a> and then sign in as admin@test.com if you want to swich users.
+    <p>You're logged in as a normal unprivileged user. <a href='/users/sign_out'>Sign out</a> and then sign in as admin@test.com if you want to swich users.</p>
   <% end -%>
 <% else %>
-  You're not logged in at all. Go
-  <a href="/users/sign_in">sign in</a>
+  <p>You're not logged in at all. Go
+  <a href="/users/sign_in">sign in</a></p>
 <% end %>
